@@ -1,0 +1,18 @@
+.list-item {
+  background-color: #ccffcc;
+  padding: 0.5rem;
+}
+
+.list-item > h2 {
+  font-size: 20px;
+}
+
+.list-item > h3 {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.list-item > p {
+  font-size: 16px;
+  font-weight: 300;
+}

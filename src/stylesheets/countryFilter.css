@@ -1,0 +1,20 @@
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-item-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8fff8f;
+  padding: 0.5rem 0.4rem;
+  border: none;
+  border-radius: 10px;
+  gap: 0.2rem;
+}

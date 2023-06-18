@@ -6,3 +6,7 @@
   box-sizing: border-box;
   font-family: "Roboto Condensed", sans-serif;
 }
+
+body {
+  background-color: #e3ffe3;
+}
