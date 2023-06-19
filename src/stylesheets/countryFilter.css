@@ -1,11 +1,14 @@
 .filter-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: min(1rem, 3vw);
 }
 
 .filter-item-container {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: min(1rem, 3vw);
 }
 
 .filter-item {
@@ -17,4 +20,8 @@
   border: none;
   border-radius: 10px;
   gap: 0.2rem;
+}
+
+.filter-item-container > .active {
+  background-color: #20f920;
 }

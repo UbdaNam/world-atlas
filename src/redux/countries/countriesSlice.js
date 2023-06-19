@@ -13,7 +13,8 @@ export const fetchCountries = createAsyncThunk(
     const response = await fetch(`${baseURL}/all?fields=name,region,area`);
     try {
       if (!response.ok) {
-        return rejectWithValue(response.statusText || "Something went wrong!");
+        const errorObj = await response.json();
+        return rejectWithValue(errorObj.message || "Something went wrong!");
       }
       const data = await response.json();
       return data;
@@ -37,7 +38,7 @@ const countriesSlice = createSlice({
         state.isLoading = true;
         state.error = "";
       })
-      .addCase(fetchCountries, (state, { payload }) => {
+      .addCase(fetchCountries.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
       });

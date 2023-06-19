@@ -1,5 +1,6 @@
 import "../stylesheets/countryFilter.css";
 import { AiFillCaretDown, AiOutlineCaretUp } from "react-icons/ai";
+import { ImRadioChecked2, ImRadioUnchecked } from "react-icons/im";
 import { useEffect, useState } from "react";
 import { sortData } from "../utils/sortUtils";
 import { useSelector } from "react-redux";
@@ -10,7 +11,7 @@ const CountryFilter = ({ setCountryList }) => {
   const { countries } = useSelector(countriesSelector);
   const [isFilterByArea, setIsFilterByArea] = useState(false);
   const [isFilterByRegion, setIsFilterByRegion] = useState(false);
-  const [isSorted, setIsSorted] = useState(false);
+  const [isSorted, setIsSorted] = useState(true);
 
   useEffect(() => {
     const filteredData = filterData(
@@ -19,7 +20,6 @@ const CountryFilter = ({ setCountryList }) => {
       isFilterByRegion
     );
     const sortedData = sortData(filteredData, isSorted);
-
     setCountryList(sortedData);
   }, [isFilterByArea, isFilterByRegion, isSorted, countries, setCountryList]);
 
@@ -27,15 +27,17 @@ const CountryFilter = ({ setCountryList }) => {
     <div className="filter-container">
       <div className="filter-item-container">
         <button
-          className="filter-item"
+          className={isFilterByArea ? "filter-item active" : "filter-item"}
           onClick={() => setIsFilterByArea(!isFilterByArea)}
         >
+          {isFilterByArea ? <ImRadioChecked2 /> : <ImRadioUnchecked />}
           Smaller than Lithuania by area
         </button>
         <button
-          className="filter-item"
+          className={isFilterByRegion ? "filter-item active" : "filter-item"}
           onClick={() => setIsFilterByRegion(!isFilterByRegion)}
         >
+          {isFilterByRegion ? <ImRadioChecked2 /> : <ImRadioUnchecked />}
           Countries in Oceania region
         </button>
       </div>
