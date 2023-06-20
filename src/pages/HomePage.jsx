@@ -6,22 +6,38 @@ import "../stylesheets/homePage.css";
 import { useState } from "react";
 import Loading from "../components/Loading";
 import ErrorMessage from "../components/ErrorMessage";
+import Pagination from "../components/Pagination";
 
 const HomePage = () => {
   const [currentCountries, setCurrentCountries] = useState([]);
+  const [countriesPerPage] = useState(10);
+  const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const { isLoading, error } = useSelector(countriesSelector);
+
+  const lastPageNumber = Math.ceil(currentCountries.length / countriesPerPage);
+  const currentLastIndex = countriesPerPage * currentPageNumber;
+  const currentFirstIndex = currentLastIndex - countriesPerPage;
+  const paginatedCountries = currentCountries.slice(
+    currentFirstIndex,
+    currentLastIndex
+  );
 
   return (
     <main>
       <CountryFilter
         setCountryList={setCurrentCountries}
-        countryList={currentCountries}
+        setPageNumber={setCurrentPageNumber}
       />
       {isLoading && <Loading />}
       {error && <ErrorMessage errorMessage={error} />}
       {!isLoading && !error && (
         <>
-          <CountryList countriesData={currentCountries} />
+          <CountryList countriesData={paginatedCountries} />
+          <Pagination
+            lastPageNumber={lastPageNumber}
+            setPageNumber={setCurrentPageNumber}
+            currentPageNumber={currentPageNumber}
+          />
         </>
       )}
     </main>

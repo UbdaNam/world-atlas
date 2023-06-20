@@ -1,12 +1,12 @@
 const filterByArea = (countryList, lithuaniaArea) => {
-  const filteredCountries = countryList.filter(
+  const filteredCountries = countryList?.filter(
     (country) => country.area < lithuaniaArea
   );
   return filteredCountries;
 };
 
 const filterByRegion = (countryList) => {
-  const filteredCountries = countryList.filter(
+  const filteredCountries = countryList?.filter(
     (country) => country.region === "Oceania"
   );
   return filteredCountries;
@@ -14,7 +14,7 @@ const filterByRegion = (countryList) => {
 
 export const filterData = (data, isFilterByArea, isFilterByRegion) => {
   let filteredCountries = [];
-  const [lithuaniaArea] = data.filter(
+  const [lithuaniaArea] = data?.filter(
     (country) => country.name === "Lithuania"
   );
 

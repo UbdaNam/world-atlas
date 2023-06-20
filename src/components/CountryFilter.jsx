@@ -7,13 +7,14 @@ import { useSelector } from "react-redux";
 import { countriesSelector } from "../redux/countries/countriesSlice";
 import { filterData } from "../utils/filterUtils";
 
-const CountryFilter = ({ setCountryList }) => {
+const CountryFilter = ({ setCountryList, setPageNumber }) => {
   const { countries } = useSelector(countriesSelector);
   const [isFilterByArea, setIsFilterByArea] = useState(false);
   const [isFilterByRegion, setIsFilterByRegion] = useState(false);
   const [isSorted, setIsSorted] = useState(true);
 
   useEffect(() => {
+    setPageNumber(1);
     const filteredData = filterData(
       countries,
       isFilterByArea,
