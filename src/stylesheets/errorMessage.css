@@ -1,0 +1,11 @@
+.error-container {
+  align-self: center;
+  margin-top: 1rem;
+}
+
+.error-container > p {
+  padding: 0.4rem 1rem;
+  background-color: rgb(244, 53, 53);
+  border-radius: 8px;
+  color: #fff;
+}

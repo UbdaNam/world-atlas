@@ -1,0 +1,30 @@
+.page-numbers-container {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.page-number {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: #dededf;
+  border: none;
+}
+
+.page-numbers-container .active {
+  background-color: #181717;
+  color: #fff;
+  scale: 1.1;
+  transform: translateY(-2px);
+  margin-inline: 3px;
+}
+
+.skip-backward-icon,
+.fast-forward-icon {
+  font-size: 22px;
+}
