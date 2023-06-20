@@ -22,7 +22,14 @@ const CountryFilter = ({ setCountryList, setPageNumber }) => {
     );
     const sortedData = sortData(filteredData, isSorted);
     setCountryList(sortedData);
-  }, [isFilterByArea, isFilterByRegion, isSorted, countries, setCountryList]);
+  }, [
+    isFilterByArea,
+    isFilterByRegion,
+    isSorted,
+    countries,
+    setCountryList,
+    setPageNumber,
+  ]);
 
   return (
     <div className="filter-container">

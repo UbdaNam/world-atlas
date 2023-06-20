@@ -1,9 +1,12 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CountryFilter from "../components/CountryFilter";
 import CountryList from "../components/CountryList";
-import { countriesSelector } from "../redux/countries/countriesSlice";
+import {
+  countriesSelector,
+  fetchCountries,
+} from "../redux/countries/countriesSlice";
 import "../stylesheets/homePage.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import ErrorMessage from "../components/ErrorMessage";
 import Pagination from "../components/Pagination";
@@ -21,6 +24,11 @@ const HomePage = () => {
     currentFirstIndex,
     currentLastIndex
   );
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCountries());
+  }, [dispatch]);
 
   return (
     <main>
