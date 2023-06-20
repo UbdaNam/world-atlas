@@ -11,16 +11,14 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
-  - [🎥 Video description](#video-description)
 - [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
   - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
   - [Install](#install)
   - [Usage](#usage)
-  - [Test](#test)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
+- [🤝 Contribution](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
@@ -101,7 +99,7 @@ In the project directory, you can run:
 👤 **Ubda Nam**
 
 - GitHub: [@UbdaNam](https://github.com/UbdaNam)
-- LinkedIn: [Abdurahim M.](linkedin.com/in/abdurahim-miftah)
+- LinkedIn: [Abdurahim M.](https://www.linkedin.com/in/abdurahim-miftah/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
