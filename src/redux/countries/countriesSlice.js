@@ -7,10 +7,13 @@ const initialState = {
   error: '',
 };
 
+const fields = ['name,flags,area,region'];
+const params = new URLSearchParams({ fields: fields.join(',') });
+
 export const fetchCountries = createAsyncThunk(
   'fetch/fetchCountries',
   async (_, { rejectWithValue }) => {
-    const response = await fetch(`${baseURL}/all`);
+    const response = await fetch(`${baseURL}/all?${params}`, {});
     try {
       if (!response.ok) {
         const errorObj = await response.json();
